@@ -1,0 +1,43 @@
+\ProvidesPackage{pb-fonts}
+
+\RequirePackage{iftex}
+
+\ifPDFTeX
+
+    \RequirePackage[T1]{fontenc}
+    \RequirePackage[utf8]{inputenc}
+    \RequirePackage{ebgaramond}
+
+    \newcommand{\titlefont}{\bfseries}
+
+\else
+
+    \RequirePackage{fontspec}
+
+    %----------------------------------------------------
+    % Fonte principal
+    %----------------------------------------------------
+
+    \setmainfont[
+        Path=fonts/EB_Garamond/,
+        Extension=.ttf,
+        UprightFont=EBGaramond-Regular,
+        ItalicFont=EBGaramond-Italic,
+        BoldFont=EBGaramond-Bold,
+        BoldItalicFont=EBGaramond-BoldItalic
+    ]{EBGaramond-Regular}
+
+    %----------------------------------------------------
+    % Fonte dos títulos
+    %----------------------------------------------------
+
+    \newfontfamily\titlefont[
+        Path=fonts/Cormorant_Garamond/,
+        Extension=.ttf,
+        UprightFont=CormorantGaramond-Regular,
+        ItalicFont=CormorantGaramond-Italic,
+        BoldFont=CormorantGaramond-Bold,
+        BoldItalicFont=CormorantGaramond-BoldItalic
+    ]{CormorantGaramond-Regular}
+
+\fi
