@@ -17,7 +17,7 @@ set -euo pipefail
 
 PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 OUTPUT_DIR="${PROJECT_ROOT}/build/pdf"
-MAIN_FILE="${PROJECT_ROOT}/documento.tex"
+MAIN_FILE="${PROJECT_ROOT}/parede-branca.tex"
 
 ENGINE="xelatex"
 
