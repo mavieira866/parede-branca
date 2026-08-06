@@ -1,17 +1,20 @@
 \NeedsTeXFormat{LaTeX2e}
+\makeatletter
+\def\input@path{{./styles/}}
+\makeatother
 \ProvidesClass{paredebranca}
 
-\LoadClass[12pt,openright]{memoir}
+\LoadClass[12pt,openright,a5paper]{memoir}
+\setlrmarginsandblock{23mm}{17mm}{*} % {Interna}{Externa}
+\setulmarginsandblock{20mm}{20mm}{*} % {Superior}{Inferior}
+\checkandfixthelayout
 
+\RequirePackage{pb-fonts}
+\RequirePackage{pb-cover}
+\RequirePackage{pb-chapter}
 %\RequirePackage{styles/pb-layout}
-\RequirePackage{styles/pb-fonts}
 
-\RequirePackage{titlesec}
 \RequirePackage{fancyhdr}
 \RequirePackage{setspace}
 \RequirePackage{xcolor}
 \RequirePackage{emptypage}
-\RequirePackage[a5paper,top=2.5cm,bottom=2.5cm,inner=3cm,outer=2cm]{geometry}
-
-\RequirePackage{styles/pb-cover}
-\RequirePackage{styles/pb-chapter}
