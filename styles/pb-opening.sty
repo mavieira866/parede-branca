@@ -9,7 +9,7 @@
 \ProvidesPackage{pb-opening}[2026/08/18]
 
 \RequirePackage{lettrine}
-\RequirePackage{ragged2e}
+\RequirePackage{wasysym}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Cores
@@ -18,29 +18,53 @@
 \definecolor{PBGray}{HTML}{707070}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Página de citação musical
+%% Página de trecho musical
+%%
+%% Uso:
+%% \PBmusicquote{Título}{Artista}{
+%%   Primeiro verso\\
+%%   Segundo verso\\
+%%   ...
+%%
+%%   \vspace{0.7em}
+%%   Nova estrofe\\
+%%   ...
+%% }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\PBmusicquote}[3]
 {
     \cleardoublepage
-    \thispagestyle{empty}
+    \thispagestyle{plain}
 
-    \vspace*{0.24\textheight}
+    \vspace*{0.035\textheight}
 
     \begin{center}
-        {\titlefont\fontsize{18}{22}\selectfont\itshape
-        ``#1''\par}
 
-        \vspace{1.5cm}
+        % Nota musical
+        {\fontsize{23}{26}\selectfont\eighthnote\par}
 
-        {\titlefont\fontsize{11}{14}\selectfont
+        \vspace{1.55cm}
+
+        % Título do trecho
+        {\titlefont\fontsize{18}{22}\selectfont
+        #1\par}
+
+        \vspace{0.65cm}
+
+        % Artista
+        {\titlefont\fontsize{12}{15}\selectfont
         #2\par}
 
-        \vspace{0.25cm}
+        \vspace{0.9cm}
 
-        {\fontsize{10}{12}\selectfont\color{PBGray}
-        #3\par}
+        % Letra / trecho
+        \begin{minipage}{0.78\textwidth}
+            \centering
+            {\fontsize{11.5}{18}\selectfont\itshape
+            #3\par}
+        \end{minipage}
+
     \end{center}
 
     \cleardoublepage
@@ -53,7 +77,7 @@
 \newcommand{\PBthought}[1]
 {
     \cleardoublepage
-    \thispagestyle{empty}
+    \thispagestyle{plain}
 
     \vspace*{0.27\textheight}
 
@@ -83,7 +107,7 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Início completo da abertura do capítulo
+%% Início do capítulo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\PBchapterstart}[1]
