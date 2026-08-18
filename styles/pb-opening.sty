@@ -18,21 +18,15 @@
 \definecolor{PBGray}{HTML}{707070}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Página de trecho musical
+%% Página de música — novo formato editorial
 %%
-%% Uso:
-%% \PBmusicquote{Título}{Artista}{
-%%   Primeiro verso\\
-%%   Segundo verso\\
-%%   ...
+%% \PBmusicpage{Título}{Artista}{Trecho}
 %%
-%%   \vspace{0.7em}
-%%   Nova estrofe\\
-%%   ...
-%% }
+%% O terceiro argumento aceita quebras de linha com \\ e separação de
+%% estrofes com \vspace{...}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\PBmusicquote}[3]
+\newcommand{\PBmusicpage}[3]
 {
     \cleardoublepage
     \thispagestyle{plain}
@@ -40,34 +34,39 @@
     \vspace*{0.035\textheight}
 
     \begin{center}
-
-        % Nota musical
         {\fontsize{23}{26}\selectfont\eighthnote\par}
 
         \vspace{1.55cm}
 
-        % Título do trecho
         {\titlefont\fontsize{18}{22}\selectfont
         #1\par}
 
         \vspace{0.65cm}
 
-        % Artista
         {\titlefont\fontsize{12}{15}\selectfont
         #2\par}
 
         \vspace{0.9cm}
 
-        % Letra / trecho
         \begin{minipage}{0.78\textwidth}
             \centering
             {\fontsize{11.5}{18}\selectfont\itshape
             #3\par}
         \end{minipage}
-
     \end{center}
 
     \cleardoublepage
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Compatibilidade com a forma anterior
+%%
+%% \PBmusicquote{trecho}{música}{artista}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\PBmusicquote}[3]
+{
+    \PBmusicpage{#2}{#3}{#1}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
