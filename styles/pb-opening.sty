@@ -19,11 +19,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Página de música — novo formato editorial
-%%
-%% \PBmusicpage{Título}{Artista}{Trecho}
-%%
-%% O terceiro argumento aceita quebras de linha com \\ e separação de
-%% estrofes com \vspace{...}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\PBmusicpage}[3]
@@ -60,8 +55,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Compatibilidade com a forma anterior
-%%
-%% \PBmusicquote{trecho}{música}{artista}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\PBmusicquote}[3]
@@ -92,17 +85,12 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Primeira letra capitulada
+%% Primeira letra sem capitulação
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\PBdropcap}[2]
 {
-    \lettrine[
-        lines=3,
-        lraise=0.05,
-        nindent=0pt,
-        findent=0.15em
-    ]{#1}{#2}
+    #1#2
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
