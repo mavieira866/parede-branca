@@ -104,7 +104,7 @@ latexmk \
 # Resultado
 ###############################################################################
 
-PDF="${OUTPUT_DIR}/livro.pdf"
+PDF="${OUTPUT_DIR}/parede-branca.pdf"
 
 if [[ -f "$PDF" ]]; then
 
